@@ -1,8 +1,5 @@
-function criarCurso(nome, tipo, disciplinasObrigatórias, disciplinasOpcionais) {
-  //const disciplinasObrigatórias = []
-  //const disciplinasOpcionais = []
-
-  return { nome, tipo, disciplinasObrigatórias, disciplinasOpcionais };
+function criarCurso(nome, tipo, disciplinas) {
+  return { nome, tipo, disciplinas };
 }
 
 module.exports = criarCurso;
