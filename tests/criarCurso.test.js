@@ -1,4 +1,4 @@
-const criarCurso = require("./criarCurso");
+const criarCurso = require("../utility/criarCurso");
 const disciplinas = [
   { nome: "Algoritmos e Programação", creditos: 6, obrigatoria: true },
   { nome: "Estatística", creditos: 2, obrigatoria: false },

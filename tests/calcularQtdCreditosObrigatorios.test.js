@@ -1,4 +1,4 @@
-const calcularQtdCreditosObrigatorios = require("./calcularQtdCreditosObrigatorios");
+const calcularQtdCreditosObrigatorios = require("../utility/calcularQtdCreditosObrigatorios");
 
 test("Calcular a quantidade de créditos de um curso", () => {
   const curso = {
