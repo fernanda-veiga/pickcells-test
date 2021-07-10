@@ -1,4 +1,5 @@
-const pegarCursoComMaisCreditosObrigatorios = require("./pegarCursoComMaisCreditosObrigatorios");
+const pegarCursoComMaisCreditosObrigatorios = require("../pegarCursoComMaisCreditosObrigatorios");
+const cursosExemplo = require("../cursos.js");
 
 test("Pegar curso com mais créditos", () => {
   const cursos = [
@@ -80,7 +81,6 @@ test("Pegar curso com mais créditos obrigatórios", () => {
       Curso: "Curso03",
       Disciplinas: [
         { Descrição: "Disciplina01", Créditos: 4 },
-        { Descrição: "Disciplina02", Créditos: 2 },
         { Descrição: "Disciplina03", Créditos: 3 },
       ],
       ["Créditos Obrigatórios"]: 7,
@@ -123,7 +123,6 @@ test("Pegar curso com mais créditos obrigatórios: empatados por crédito e des
     {
       Curso: "Curso03",
       Disciplinas: [
-        { Descrição: "Disciplina01", Créditos: 4 },
         { Descrição: "Disciplina02", Créditos: 2 },
         { Descrição: "Disciplina03", Créditos: 3 },
       ],
@@ -166,21 +165,35 @@ test("Pegar curso com mais créditos obrigatórios: empatados por crédito e tip
   expect(pegarCursoComMaisCreditosObrigatorios(cursos)).toEqual([
     {
       Curso: "Curso02",
-      Disciplinas: [
-        { Descrição: "Disciplina01", Créditos: 6 },
-        { Descrição: "Disciplina02", Créditos: 4 },
-        { Descrição: "Disciplina03", Créditos: 5 },
-      ],
+      Disciplinas: [{ Descrição: "Disciplina03", Créditos: 5 }],
       ["Créditos Obrigatórios"]: 5,
     },
     {
       Curso: "Curso03",
       Disciplinas: [
-        { Descrição: "Disciplina01", Créditos: 4 },
         { Descrição: "Disciplina02", Créditos: 2 },
         { Descrição: "Disciplina03", Créditos: 3 },
       ],
       ["Créditos Obrigatórios"]: 5,
+    },
+  ]);
+});
+
+test("Resposta do exemplo", () => {
+  expect(pegarCursoComMaisCreditosObrigatorios(cursosExemplo)).toEqual([
+    {
+      Curso: "Engenharia de Software",
+      Disciplinas: [
+        { Descrição: "Algoritmos e Programação", Créditos: 4 },
+        { Descrição: "Estatística", Créditos: 6 },
+        { Descrição: "Tópicos Avançados em Bancos de Dados", Créditos: 4 },
+        { Descrição: "Metodologia Científica", Créditos: 6 },
+        {
+          Descrição: "Tópicos Avançados em Linguagens de Programação",
+          Créditos: 6,
+        },
+      ],
+      ["Créditos Obrigatórios"]: 26,
     },
   ]);
 });
