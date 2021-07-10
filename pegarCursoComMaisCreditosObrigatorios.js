@@ -1,4 +1,5 @@
-const calcularQtdCreditosObrigatorios = require("./calcularQtdCreditosObrigatorios");
+const calcularQtdCreditosObrigatorios = require("./utility/calcularQtdCreditosObrigatorios");
+const processarOutput = require("./utility/processarOutput");
 
 function pegarCursoComMaisCreditosObrigatorios(cursos) {
   let cursoMaisCreditosObrig = [];
@@ -31,15 +32,10 @@ function pegarCursoComMaisCreditosObrigatorios(cursos) {
     }
   }
 
-  return cursoMaisCreditosObrig.map((curso) => {
-    return {
-      Curso: curso.nome,
-      Disciplinas: curso.disciplinas.map((disciplina) => {
-        return { Descrição: disciplina.nome, Créditos: disciplina.creditos };
-      }),
-      ["Créditos Obrigatórios"]: creditosObrigCursoMaisCreditos,
-    };
-  });
+  return processarOutput(
+    cursoMaisCreditosObrig,
+    creditosObrigCursoMaisCreditos
+  );
 }
 
 module.exports = pegarCursoComMaisCreditosObrigatorios;
