@@ -1,5 +1,5 @@
-const criarCurso = require("./criarCurso");
-const criarDisciplina = require("./criarDisciplina");
+const criarCurso = require("./utility/criarCurso");
+const criarDisciplina = require("./utility/criarDisciplina");
 
 const cursos = [
   criarCurso("Ciência da Computação", "Graduação", [
@@ -51,3 +51,5 @@ const cursos = [
     criarDisciplina("Metodologia Científica", 6, true),
   ]),
 ];
+
+module.exports = cursos;
