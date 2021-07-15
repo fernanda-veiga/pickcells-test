@@ -1,5 +1,5 @@
 const pegarCursoMaisCredObrig = require("../pegarCursoMaisCredObrig");
-const cursosExemplo = require("../cursos.js");
+const cursosExemplo = require("../data/cursos");
 
 test("Resposta do exemplo", () => {
   expect(pegarCursoMaisCredObrig(cursosExemplo)).toEqual({
