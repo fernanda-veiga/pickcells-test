@@ -1,6 +1,6 @@
 const cursos = [
   {
-    curso: "Ciência da Computação",
+    descricao: "Ciência da Computação",
     tipo: "Graduação",
     disciplinas: [
       {
@@ -36,7 +36,7 @@ const cursos = [
     ],
   },
   {
-    curso: "Sistemas de Informação",
+    descricao: "Sistemas de Informação",
     tipo: "Graduação",
     disciplinas: [
       {
@@ -72,7 +72,7 @@ const cursos = [
     ],
   },
   {
-    curso: "Engenharia de Software",
+    descricao: "Engenharia de Software",
     tipo: "Mestrado",
     disciplinas: [
       {
@@ -108,7 +108,7 @@ const cursos = [
     ],
   },
   {
-    curso: "Inteligência Computacional",
+    descricao: "Inteligência Computacional",
     tipo: "Mestrado",
     disciplinas: [
       {
@@ -144,7 +144,7 @@ const cursos = [
     ],
   },
   {
-    curso: "Ciência da Computação",
+    descricao: "Ciência da Computação",
     tipo: "Doutorado",
     disciplinas: [
       {
@@ -180,7 +180,7 @@ const cursos = [
     ],
   },
   {
-    curso: "Inteligência Artificial",
+    descricao: "Inteligência Artificial",
     tipo: "Doutorado",
     disciplinas: [
       {
