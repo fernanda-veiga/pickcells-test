@@ -2,7 +2,7 @@ const calcularQtdCredObrig = require("../utility/calcularQtdCredObrig");
 
 test("Calcular a quantidade de créditos de um curso", () => {
   const curso = {
-    curso: "Curso01",
+    descricao: "Curso01",
     tipo: "Graduação",
     disciplinas: [
       { descricao: "Disciplina01", creditos: 5, obrigatoria: true },
@@ -16,7 +16,7 @@ test("Calcular a quantidade de créditos de um curso", () => {
 
 test("Calcular a quantidade de créditos obrigatórios de um curso", () => {
   const curso = {
-    curso: "Curso01",
+    descricao: "Curso01",
     tipo: "Graduação",
     disciplinas: [
       { descricao: "Disciplina01", creditos: 5, obrigatoria: false },
