@@ -1,33 +1,45 @@
 const pegarCursoComMaisCreditosObrigatorios = require("../pegarCursoComMaisCreditosObrigatorios");
 const cursosExemplo = require("../cursos.js");
 
+test("Input é vazio", () => {
+  expect(pegarCursoComMaisCreditosObrigatorios()).toEqual();
+});
+
+test("Input nao é array", () => {
+  expect(pegarCursoComMaisCreditosObrigatorios(1)).toEqual();
+});
+
+test("Input é array vazia", () => {
+  expect(pegarCursoComMaisCreditosObrigatorios([])).toEqual();
+});
+
 test("Pegar curso com mais créditos", () => {
   const cursos = [
     {
-      nome: "Curso01",
+      curso: "Curso01",
       tipo: "Graduação",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 5, obrigatoria: true },
-        { nome: "Disciplina02", creditos: 3, obrigatoria: true },
-        { nome: "Disciplina03", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 5, obrigatoria: true },
+        { descricao: "Disciplina02", creditos: 3, obrigatoria: true },
+        { descricao: "Disciplina03", creditos: 4, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso02",
+      curso: "Curso02",
       tipo: "Mestrado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 6, obrigatoria: true },
-        { nome: "Disciplina02", creditos: 4, obrigatoria: true },
-        { nome: "Disciplina03", creditos: 5, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 6, obrigatoria: true },
+        { descricao: "Disciplina02", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina03", creditos: 5, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso03",
+      curso: "Curso03",
       tipo: "Doutorado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 4, obrigatoria: true },
-        { nome: "Disciplina02", creditos: 2, obrigatoria: true },
-        { nome: "Disciplina03", creditos: 3, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina02", creditos: 2, obrigatoria: true },
+        { descricao: "Disciplina03", creditos: 3, obrigatoria: true },
       ],
     },
   ];
@@ -48,30 +60,30 @@ test("Pegar curso com mais créditos", () => {
 test("Pegar curso com mais créditos obrigatórios", () => {
   const cursos = [
     {
-      nome: "Curso01",
+      curso: "Curso01",
       tipo: "Graduação",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 5, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 3, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 5, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 3, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 4, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso02",
+      curso: "Curso02",
       tipo: "Mestrado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 6, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 4, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 5, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 6, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 4, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 5, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso03",
+      curso: "Curso03",
       tipo: "Doutorado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 4, obrigatoria: true },
-        { nome: "Disciplina02", creditos: 2, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 3, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina02", creditos: 2, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 3, obrigatoria: true },
       ],
     },
   ];
@@ -91,30 +103,30 @@ test("Pegar curso com mais créditos obrigatórios", () => {
 test("Pegar curso com mais créditos obrigatórios: empatados por crédito e desempatados por tipo", () => {
   const cursos = [
     {
-      nome: "Curso01",
+      curso: "Curso01",
       tipo: "Graduação",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 5, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 3, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 5, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 3, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 4, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso02",
+      curso: "Curso02",
       tipo: "Mestrado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 6, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 4, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 5, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 6, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 4, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 5, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso03",
+      curso: "Curso03",
       tipo: "Doutorado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 4, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 2, obrigatoria: true },
-        { nome: "Disciplina03", creditos: 3, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 4, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 2, obrigatoria: true },
+        { descricao: "Disciplina03", creditos: 3, obrigatoria: true },
       ],
     },
   ];
@@ -134,30 +146,30 @@ test("Pegar curso com mais créditos obrigatórios: empatados por crédito e des
 test("Pegar curso com mais créditos obrigatórios: empatados por crédito e tipo", () => {
   const cursos = [
     {
-      nome: "Curso01",
+      curso: "Curso01",
       tipo: "Graduação",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 5, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 3, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 4, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 5, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 3, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 4, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso02",
+      curso: "Curso02",
       tipo: "Doutorado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 6, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 4, obrigatoria: false },
-        { nome: "Disciplina03", creditos: 5, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 6, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 4, obrigatoria: false },
+        { descricao: "Disciplina03", creditos: 5, obrigatoria: true },
       ],
     },
     {
-      nome: "Curso03",
+      curso: "Curso03",
       tipo: "Doutorado",
       disciplinas: [
-        { nome: "Disciplina01", creditos: 4, obrigatoria: false },
-        { nome: "Disciplina02", creditos: 2, obrigatoria: true },
-        { nome: "Disciplina03", creditos: 3, obrigatoria: true },
+        { descricao: "Disciplina01", creditos: 4, obrigatoria: false },
+        { descricao: "Disciplina02", creditos: 2, obrigatoria: true },
+        { descricao: "Disciplina03", creditos: 3, obrigatoria: true },
       ],
     },
   ];
