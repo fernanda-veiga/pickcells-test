@@ -1,55 +1,220 @@
-const criarCurso = require("./utility/criarCurso");
-const criarDisciplina = require("./utility/criarDisciplina");
-
 const cursos = [
-  criarCurso("Ciência da Computação", "Graduação", [
-    criarDisciplina("Algoritmos e Programação", 6, true),
-    criarDisciplina("Matemática Computacional", 4, true),
-    criarDisciplina("Estatística", 2, false),
-    criarDisciplina("Tópicos Avançados em Bancos de Dados", 6, true),
-    criarDisciplina("Metodologia Científica", 4, true),
-    criarDisciplina("Tópicos Avançados em Linguagens de Programação", 6, false),
-  ]),
-  criarCurso("Sistemas de Informação", "Graduação", [
-    criarDisciplina("Algoritmos e Programação", 4, false),
-    criarDisciplina("Estatística", 4, true),
-    criarDisciplina("Empreendedorismo e Inovação", 4, true),
-    criarDisciplina("Tópicos Avançados em Bancos de Dados", 6, true),
-    criarDisciplina("Metodologia Científica", 4, true),
-    criarDisciplina("Tópicos Avançados em Linguagens de Programação", 4, true),
-  ]),
-  criarCurso("Engenharia de Software", "Mestrado", [
-    criarDisciplina("Algoritmos e Programação", 4, true),
-    criarDisciplina("Matemática Computacional", 6, false),
-    criarDisciplina("Estatística", 6, true),
-    criarDisciplina("Tópicos Avançados em Bancos de Dados", 4, true),
-    criarDisciplina("Metodologia Científica", 6, true),
-    criarDisciplina("Tópicos Avançados em Linguagens de Programação", 6, true),
-  ]),
-  criarCurso("Inteligência Computacional", "Mestrado", [
-    criarDisciplina("Algoritmos e Programação", 4, false),
-    criarDisciplina("Matemática Computacional", 4, false),
-    criarDisciplina("Estatística", 6, true),
-    criarDisciplina("Empreendedorismo e Inovação", 6, false),
-    criarDisciplina("Metodologia Científica", 6, true),
-    criarDisciplina("Tópicos Avançados em Linguagens de Programação", 6, true),
-  ]),
-  criarCurso("Ciência da Computação", "Doutorado", [
-    criarDisciplina("Algoritmos e Programação", 6, true),
-    criarDisciplina("Matemática Computacional", 6, true),
-    criarDisciplina("Estatística", 4, false),
-    criarDisciplina("Tópicos Avançados em Bancos de Dados", 4, false),
-    criarDisciplina("Metodologia Científica", 6, true),
-    criarDisciplina("Tópicos Avançados em Linguagens de Programação", 4, true),
-  ]),
-  criarCurso("Inteligência Artificial", "Doutorado", [
-    criarDisciplina("Algoritmos e Programação", 6, true),
-    criarDisciplina("Matemática Computacional", 4, false),
-    criarDisciplina("Estatística", 6, false),
-    criarDisciplina("Empreendedorismo e Inovação", 2, true),
-    criarDisciplina("Tópicos Avançados em Bancos de Dados", 2, false),
-    criarDisciplina("Metodologia Científica", 6, true),
-  ]),
+  {
+    curso: "Ciência da Computação",
+    tipo: "Graduação",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Matemática Computacional",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 2,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Tópicos Avançados em Bancos de Dados",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Linguagens de Programação",
+        creditos: 6,
+        obrigatoria: false,
+      },
+    ],
+  },
+  {
+    curso: "Sistemas de Informação",
+    tipo: "Graduação",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Empreendedorismo e Inovação",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Bancos de Dados",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Linguagens de Programação",
+        creditos: 4,
+        obrigatoria: true,
+      },
+    ],
+  },
+  {
+    curso: "Engenharia de Software",
+    tipo: "Mestrado",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Matemática Computacional",
+        creditos: 6,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Bancos de Dados",
+        creditos: 4,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Linguagens de Programação",
+        creditos: 6,
+        obrigatoria: true,
+      },
+    ],
+  },
+  {
+    curso: "Inteligência Computacional",
+    tipo: "Mestrado",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Matemática Computacional",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Empreendedorismo e Inovação",
+        creditos: 6,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Linguagens de Programação",
+        creditos: 6,
+        obrigatoria: true,
+      },
+    ],
+  },
+  {
+    curso: "Ciência da Computação",
+    tipo: "Doutorado",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Matemática Computacional",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Tópicos Avançados em Bancos de Dados",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Linguagens de Programação",
+        creditos: 4,
+        obrigatoria: true,
+      },
+    ],
+  },
+  {
+    curso: "Inteligência Artificial",
+    tipo: "Doutorado",
+    disciplinas: [
+      {
+        descricao: "Algoritmos e Programação",
+        creditos: 6,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Matemática Computacional",
+        creditos: 4,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Estatística",
+        creditos: 6,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Empreendedorismo e Inovação",
+        creditos: 2,
+        obrigatoria: true,
+      },
+      {
+        descricao: "Tópicos Avançados em Bancos de Dados",
+        creditos: 2,
+        obrigatoria: false,
+      },
+      {
+        descricao: "Metodologia Científica",
+        creditos: 6,
+        obrigatoria: true,
+      },
+    ],
+  },
 ];
 
 module.exports = cursos;
