@@ -1,4 +1,4 @@
-function calcularQtdCreditosObrigatorios(curso) {
+function calcularQtdCredObrig(curso) {
   let creditos = 0;
 
   for (let i = 0; i < curso.disciplinas.length; i++) {
@@ -10,4 +10,4 @@ function calcularQtdCreditosObrigatorios(curso) {
   return creditos;
 }
 
-module.exports = calcularQtdCreditosObrigatorios;
+module.exports = calcularQtdCredObrig;

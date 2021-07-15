@@ -1,4 +1,4 @@
-const calcularQtdCreditosObrigatorios = require("../utility/calcularQtdCreditosObrigatorios");
+const calcularQtdCredObrig = require("../utility/calcularQtdCredObrig");
 
 test("Calcular a quantidade de créditos de um curso", () => {
   const curso = {
@@ -11,7 +11,7 @@ test("Calcular a quantidade de créditos de um curso", () => {
     ],
   };
 
-  expect(calcularQtdCreditosObrigatorios(curso)).toEqual(12);
+  expect(calcularQtdCredObrig(curso)).toEqual(12);
 });
 
 test("Calcular a quantidade de créditos obrigatórios de um curso", () => {
@@ -25,5 +25,5 @@ test("Calcular a quantidade de créditos obrigatórios de um curso", () => {
     ],
   };
 
-  expect(calcularQtdCreditosObrigatorios(curso)).toEqual(7);
+  expect(calcularQtdCredObrig(curso)).toEqual(7);
 });
